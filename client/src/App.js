@@ -13,17 +13,17 @@ export default class App extends Component {
 		};
 	}
 
-	// addToSavedList = movie => {
-	// 	const savedList = this.state.savedList;
-	// 	savedList.push(movie);
-	// 	this.setState({ savedList });
-	// };
-
 	addToSavedList = movie => {
-		this.setState(st => ({
-			savedList: st.savedList.concat({ movie })
-		}));
+		const savedList = this.state.savedList;
+		savedList.push(movie);
+		this.setState({ savedList });
 	};
+
+	// addToSavedList = movie => {
+	// 	this.setState(st => ({
+	// 		savedList: st.savedList.concat({ movie })
+	// 	}));
+	// };
 	render() {
 		console.log(this.state.savedList);
 		return (
