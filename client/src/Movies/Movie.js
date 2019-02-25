@@ -27,6 +27,7 @@ export default class Movie extends Component {
 				console.error(error);
 			});
 	};
+
 	// Uncomment this code when you're ready for the stretch problems
 	// componentWillReceiveProps(newProps){
 	//   if(this.props.match.params.id !== newProps.match.params.id){
@@ -34,15 +35,19 @@ export default class Movie extends Component {
 	//   }
 	// }
 
-	// saveMovie = () => {
-	//   const addToSavedList = this.props.addToSavedList;
-	//   addToSavedList(this.state.movie)
-	// }
+	saveMovie = () => {
+		const addToSavedList = this.props.addToSavedList;
+		addToSavedList(this.state.movie);
+	};
 
 	render() {
 		if (!this.state.movie) {
 			return <div>Loading movie information...</div>;
 		}
-		return <MovieCard movie={this.state.movie} />;
+		return (
+			<div>
+				<MovieCard movie={this.state.movie} saveMovie={this.saveMovie} />
+			</div>
+		);
 	}
 }

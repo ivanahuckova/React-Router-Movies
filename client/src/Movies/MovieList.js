@@ -23,10 +23,6 @@ export default class MovieList extends Component {
 			});
 	}
 
-	/*Make it so that the card in MovieList is a link, 
-this should direct the user to the /movies/{id of movie here} URL, 
-where :id is the id of the individual movie.*/
-
 	render() {
 		return (
 			<div className="movie-list">
@@ -39,5 +35,11 @@ where :id is the id of the individual movie.*/
 }
 
 function MovieDetails({ movie }) {
-	return <MovieCard movie={movie} />;
+	return (
+		<div className="movie-card">
+			<h2>
+				<Link to={`/movies/${movie.id}`}>{movie.title}</Link>
+			</h2>
+		</div>
+	);
 }
