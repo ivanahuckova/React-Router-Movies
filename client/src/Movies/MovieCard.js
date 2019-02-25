@@ -26,7 +26,7 @@ const MovieCard = props => {
 
 			<button
 				onClick={() => {
-					props.saveMovie();
+					props.saveMovie(movie);
 				}}
 			>
 				Save to Save List
